@@ -29,3 +29,14 @@ Route::get('/coucou/{name}', function($name){
 Route::get('/nom', ['as' => 'nom', function() {
     return "coucou route nommée";
 }]);
+
+// Routes groupées
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/salut', function(){
+      Return "Salut l'admin !";
+    });
+});
+
+Route::get('/auth', ['middleware' => 'auth'], function() {
+  Return "coucou";
+});
