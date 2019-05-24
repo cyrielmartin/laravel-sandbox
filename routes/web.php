@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route a propos
+
+Route::get('/a-propos', ['as'=>'about', 'uses'=>'PagesController@about']);
+
+// Route en passant par le Controller
+// Route::get('/controller', 'WelcomeController@index');
+
 // Ma première route Laravel à la main. Emotion.
 Route::get('/test', function () {
     return view('test');
