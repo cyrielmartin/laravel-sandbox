@@ -10,7 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route par défaut
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Ma première route Laravel à la main. Emotion.
+Route::get('/test', function () {
+    return view('test');
+});
+
+// Route sans vue mais avec param dynamiques
+Route::get('/coucou/{name}', function($name){
+    return "coucou $name";
+});
+
+// Route nommée
+Route::get('/nom', ['as' => 'nom', function() {
+    return "coucou route nommée";
+}]);
