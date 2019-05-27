@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/adminer', function() {
+//   return view('adminer');
+// });
+
 //Route a propos
 
 Route::get('/a-propos', ['as'=>'about', 'uses'=>'PagesController@about']);
@@ -32,7 +36,7 @@ Route::get('/coucou/{name}', function($name){
     return "coucou $name";
 });
 
-// Route nommée
+// Route nommée (avec un nom)
 Route::get('/nom', ['as' => 'nom', function() {
     return "coucou route nommée";
 }]);
